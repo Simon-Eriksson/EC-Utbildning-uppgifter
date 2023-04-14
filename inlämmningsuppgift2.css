@@ -1,0 +1,24 @@
+.container {
+    display: grid;
+    grid-template-rows: 1fr 5fr 1fr;
+    grid-template-columns: 1fr 3.5fr;
+    gap: 3px;
+}
+
+.topnav {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    background-color: green;
+}
+
+.main {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    background-color: green;
+}
+
+.footer {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    background-color: green;
+}

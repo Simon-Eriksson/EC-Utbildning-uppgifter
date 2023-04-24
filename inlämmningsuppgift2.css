@@ -1,24 +1,177 @@
+html {
+    height: 100vh;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family:Arial, Helvetica, sans-serif;
+    background: whitesmoke;
+}
+
+/* Wrapper */
 .container {
     display: grid;
-    grid-template-rows: 1fr 5fr 1fr;
-    grid-template-columns: 1fr 3.5fr;
-    gap: 3px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+    "navbar navbar"
+    "text form"
+    "footer footer";
+    min-height: 100vh;
+    gap: 10px;
+    padding: 10px;
 }
 
-.topnav {
-    grid-column-start: 1;
-    grid-column-end: 2;
-    background-color: green;
+/* Navbar */
+.navbar {
+    grid-area: navbar;
+    background-color: #FBAB7E;
+    background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
 }
 
-.main {
-    grid-column-start: 1;
-    grid-column-end: 2;
-    background-color: green;
+/* style for navbar */
+.logo {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
 }
 
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+li {
+    float: right;
+}
+
+li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: lightgray;
+}
+
+/* code for picture in main */
+.text-main {
+    grid-area: text;
+    margin: 3px;
+    padding: 3px;
+    /*background-image: url(https://images.unsplash.com/photo-1518747993763-5c9d82d08a9e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80); */
+    background-color: #FBAB7E;
+    background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+}
+
+.text-main {
+
+}
+
+.animate {
+
+}
+
+@keyframes {
+    
+}
+
+/* code for form in main */
+.main-form {
+    grid-area: form;
+    justify-content: center;
+    align-items: center;
+    background-color: #FBAB7E;
+    background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+    margin: 3px;
+    padding: 3px;
+}
+
+/* Style for user registration  form */
+
+.title {
+    text-align: center;
+    color: black;
+}
+
+.input-container {
+    display: flex;
+    width: 100%;
+    margin: 3px;
+    margin-bottom: 10px;
+  }
+  
+.icon {
+    padding: 10px;
+    background: orangered;
+    color: black;
+    min-width: 50px;
+    text-align: center;
+}
+  
+.input-field {
+    width: 100%;
+    padding: 10px;
+    outline: none;
+}
+  
+.input-field:focus {
+    border: 2px solid orangered;
+}
+
+.btn {
+    background-color: orangered;
+    color: black;
+    padding: 15px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+}
+  
+.btn:hover {
+    opacity: 1;
+}
+
+/* Footer */
 .footer {
-    grid-column-start: 1;
-    grid-column-end: 2;
-    background-color: green;
+    grid-area: footer;
+    justify-content: end;
+    align-items: end;
+    color: black;
+    padding: 3px;
+    margin: 3px;
+    background-color: #FBAB7E;
+    background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);    
+}
+
+
+/* Responsive for mobile */
+@media only screen and (max-width: 600px) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: 
+        "navbar"
+        "text"
+        "form"
+        "footer";
+    }
+}
+/* Responsive for laptops/desktops */
+@media only screen and (min-width: 992px) {
+}
+
+/* Responsive for large laptops and desktops */
+@media only screen and (min-width: 1200px) {
 }

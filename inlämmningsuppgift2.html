@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="inlämmningsuppgift2.css">
     <title>Inlämmningsuppgift-2</title>
 </head>
@@ -11,76 +12,66 @@
 
     <div class="container">
 
-        <div class="topnav">
-            <nav>
-
-                <ul>
-                    <li><a href="">LINK</a></li>
-                    <li><a href="">LINK</a></li>
-                    <li><a href="">LINK</a></li>
-                    <li><a href="">LINK</a></li>
-                    <li><a href="">LINK</a></li>
-                </ul>
-    
-            </nav>
+        <!-- Code for navbar -->
+        <div class="navbar">
+            <header>
+                <i style="float: left;" class="fa fa-chrome logo"></i>
+                <nav class="topnav">
+                    <ul>
+                        <li><a href="">Home</a></li>
+                        <li><a href="">News</a></li>
+                        <li><a href="">Contact</a></li>
+                        <li><a href="">about</a></li>
+                    </ul>
+                </nav>
+            </header>
         </div>
 
-        <div class="main">
-            <main>
-                <form action="/action_page.php">
+        <!-- Code for picture in main -->
+        <div class="text-main">
 
-                    <div class="title">
-                        <h2> CREATE ACCOUNT </h2>
-                        <p> Please fill in this form to create an account. </p>
+            <h2 class="animate"> SIGN UP </h2>
+
+        </div>
+        
+        <!-- Code for user registration  form -->
+        <div class="main-form">
+            <form action="/action_page.php">
+                <div class="title">
+                    <h2> CREATE ACCOUNT </h2>
+                    <p> Please fill in this form to create an account. </p>
+                </div>
+
+                <div class="user registration">
+                    <div class="input-container">
+                        <i class="fa fa-user icon"></i>
+                    <input class="input-field" type="text" placeholder="First-name" name="first-name" required>
+                    <i class="fa fa-user icon"></i>
+                    <input class="input-field" type="text" placeholder="Last-name" name="last-name" required>
                     </div>
-    
-                    <div class="user registration">
-
-                        <label> <b> EMAIL </b> </label>
-                        <br>
-                        <input type="text" placeholder="Email address" name="mail" required>
-                        <br>
-
-                        <label for="psw"><b>Password</b></label>
-                        <br>
-                        <input type="password" placeholder="Enter Password" name="psw" required>
-                        <br>
-
-                        <label for="psw-repeat"><b>Repeat Password</b></label>
-                        <br>
-                        <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
-                        <br>
-
-                        <label> <b> FIRST NAME </b> </label>
-                        <br>
-                        <input type="text" placeholder="first-name" name="first-name" required>
-                        <br>
-
-                        <label> <b> LAST NAME </b> </label>
-                        <br>
-                        <input type="text" placeholder="last-name" name="last-name" required>
-                        <br>
-
-                        <label for="age">AGE</label>
-                        <br>
-                        <input type="number" name="age" id="age">
-                        <br>
-
-                        <label> <b> REMEMBER ME </b> </label>
-                        <br>
-                        <input type="checkbox" checked="checked" name="remember">
-                        <br>
-
-                        <div class="clearfix">
-                            <button type="submit" class="signupbtn">Sign Up</button>
-                        </div>
-
+                    <div class="input-container">
+                        <i class="fa fa-birthday-cake icon"></i>
+                    <input class="input-field" type="number" placeholder="Age" name="age" id="age">
                     </div>
-
-                </form>
-            </main>
+                    <div class="input-container">
+                        <i class="fa fa-envelope icon"></i>
+                        <input class="input-field" type="text" placeholder="Email" name="email">
+                    </div>
+                    <div class="input-container">
+                        <i class="fa fa-key icon"></i>
+                        <input class="input-field" type="password" placeholder="Enter password" name="psw">
+                    </div>
+                    <div class="input-container">
+                        <i class="fa fa-key icon"></i>
+                        <input class="input-field" type="password" placeholder="Repeat password" name="psw-repeat">
+                    </div>
+                    <button type="submit" class="btn">Register</button>
+                </div>
+                
+            </form>
         </div>
 
+        <!-- Code for footer -->
         <div class="footer">
             <footer>
                 <section id="contact" class="contact"><label></label></section>

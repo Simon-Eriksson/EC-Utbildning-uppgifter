@@ -1,9 +1,10 @@
 html {
     height: 100vh;
+    box-sizing: border-box;
 }
 
-* {
-    box-sizing: border-box;
+*, *::before, *::after {
+    box-sizing: inherit;
 }
 
 body {
@@ -21,21 +22,21 @@ body {
     "text form"
     "footer footer";
     min-height: 100vh;
-    gap: 10px;
+    gap: 5px;
     padding: 10px;
 }
 
-/* Navbar */
+/* style for navbar */
 .navbar {
     grid-area: navbar;
     background-color: #FBAB7E;
     background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
 }
 
-/* style for navbar */
 .logo {
     display: block;
     color: black;
+    min-width: 50px;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -64,40 +65,67 @@ li a:hover {
     background-color: lightgray;
 }
 
-/* code for picture in main */
+/* style for side-content in main */
 .text-main {
     grid-area: text;
-    margin: 3px;
-    padding: 3px;
+    text-align: center;
     /*background-image: url(https://images.unsplash.com/photo-1518747993763-5c9d82d08a9e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80); */
     background-color: #FBAB7E;
     background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
 }
 
-.text-main {
-
-}
-
 .animate {
-
+    animation: 3s infinite alternate myanim;
 }
 
-@keyframes {
-    
+@keyframes myanim {
+    0% {
+        scale: 1.0;
+    }
+
+    100% {
+        scale: 1.5;
+    }
 }
 
-/* code for form in main */
-.main-form {
-    grid-area: form;
-    justify-content: center;
-    align-items: center;
-    background-color: #FBAB7E;
-    background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
-    margin: 3px;
-    padding: 3px;
+img {
+    max-width: 60%;
+    height: auto;
 }
 
 /* Style for user registration  form */
+.main-form {
+    grid-area: form;
+    text-align: center;
+    background-color: #FBAB7E;
+    background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+}
+
+.title p {
+    animation: 3s infinite alternate form-text;
+}
+
+@keyframes form-text {
+    0% {
+        color: black;
+    }
+
+    25% {
+        color: green;
+    }
+
+    50% {
+        color: blue;
+    }
+
+    75% {
+        color: lightslategray;
+    }
+
+    100% {
+        color: white;
+    }
+}
 
 .title {
     text-align: center;
@@ -107,9 +135,8 @@ li a:hover {
 .input-container {
     display: flex;
     width: 100%;
-    margin: 3px;
     margin-bottom: 10px;
-  }
+}
   
 .icon {
     padding: 10px;
@@ -132,7 +159,7 @@ li a:hover {
 .btn {
     background-color: orangered;
     color: black;
-    padding: 15px 20px;
+    padding: 15px;
     border: none;
     cursor: pointer;
     width: 100%;
@@ -146,18 +173,15 @@ li a:hover {
 /* Footer */
 .footer {
     grid-area: footer;
-    justify-content: end;
-    align-items: end;
+    text-align: center;
     color: black;
     padding: 3px;
-    margin: 3px;
     background-color: #FBAB7E;
     background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);    
 }
 
-
 /* Responsive for mobile */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 860px) {
     .container {
         grid-template-columns: 1fr;
         grid-template-rows: auto;
@@ -169,9 +193,17 @@ li a:hover {
     }
 }
 /* Responsive for laptops/desktops */
-@media only screen and (min-width: 992px) {
-}
-
-/* Responsive for large laptops and desktops */
 @media only screen and (min-width: 1200px) {
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto 1fr auto;
+        grid-template-areas:
+        "navbar navbar"
+        "text form"
+        "footer footer";
+        min-height: 100vh;
+        gap: 5px;
+        padding: 10px;
+    }
 }

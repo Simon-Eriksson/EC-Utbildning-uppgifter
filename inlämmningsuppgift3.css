@@ -1,0 +1,54 @@
+html {
+    height: 100vh;
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family:Arial, Helvetica, sans-serif;
+    background: whitesmoke;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+    "page-header page-header"
+    "masthead masthead"
+    "power-grid power-grid"
+    "two-column two-column"
+    "divider divider"
+    "footer footer";
+    min-height: 100vh;
+}
+
+.page-header {
+    grid-area: page-header;
+}
+
+.page-content {
+}
+
+.masthead {
+    grid-area: masthead;
+    background-image: url(https://wallpapercave.com/wp/3fBDYDq.jpg);
+}
+
+.power-grid {
+    grid-area: power-grid;
+}
+
+.two-column {
+    grid-area: two-column;
+}
+
+.divider {
+    grid-area: divider;
+}
+
+.footer {
+    grid-area: footer;
+}

@@ -8,15 +8,19 @@ html {
 }
 
 body {
+    padding: 0;
+    margin: 0;
     font-family:Arial, Helvetica, sans-serif;
-    background: whitesmoke;
+    background-color: #000;
 }
 
-.wrapper {
+/* wrapper grids */
+.container {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: 58px auto auto auto auto auto;
     grid-template-areas:
-    "page-header page-header"
+    "header header"
     "masthead masthead"
     "power-grid power-grid"
     "two-column two-column"
@@ -25,29 +29,200 @@ body {
     min-height: 100vh;
 }
 
-.page-header {
-    grid-area: page-header;
+/* style navbar */
+a {
+    color: white;
 }
 
-.page-content {
+.header {
+    grid-area: header;
+    background-color: red;
+    box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
+    width: 100%;
+    z-index: 3;
+}
+
+.header ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    background-color: red;
+}
+
+.header ul a {
+    display: block;
+    padding: 20px;
+    border-right: 1px solid white;
+    text-decoration: none;
+}
+
+.header ul a:hover {
+    background-color: #000;
+}
+
+.header .logo {
+    float: left;
+    display: block;
+    font-size: 2em;
+    padding: 10px 20px;
+}
+
+.header .menu {
+    clear: both;
+    max-height: 0;
+    transition:max-height .2s ease-out;
+}
+
+.header .menu-icon {
+    padding: 28px 20px;
+    position: relative;
+    float: right;
+    cursor: pointer;
+}
+
+.header .menu-icon .nav-icon {
+    background: white;
+    display: block;
+    height: 2px;
+    width: 18px;
+    position: relative;
+    transition:background .2s ease-out;
+}
+
+.header .menu-icon .nav-icon:before {
+    background: white;
+    content: "";
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    top: 5px;
+}
+.header .menu-icon .nav-icon:after {
+    background: white;
+    content: "";
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    top: -5px;
+}
+
+.header .menu-btn {
+    display: none;
+}
+
+.header .menu-btn:checked ~ .menu {
+    max-height: 240px;
+}
+
+.header .menu-btn:checked ~ .menu-icon .nav-icon {
+    background: transparent;
+}
+
+.header .menu-btn:checked ~ .menu-icon .nav-icon::before {
+    transform: rotate(-45deg);
+    top:0
+}
+
+.header .menu-btn:checked ~ .menu-icon .nav-icon::after {
+    transform: rotate(45deg);
+    top: 0;
 }
 
 .masthead {
     grid-area: masthead;
+    background-color: lightgreen;
+    background-image: url(https://www.enjpg.com/img/2020/iron-man-14.jpg);
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
 }
 
+/* style for power-grids*/
 .power-grid {
     grid-area: power-grid;
+    background-color: aqua;
 }
 
+.single-chart {
+    width: 33%;
+    justify-content: space-around ;
+}
+  
+.circular-chart {
+    display: block;
+    margin: 10px auto;
+    max-width: 80%;
+    max-height: 250px;
+}
+  
+.circle-bg {
+    fill: none;
+    stroke: #eee;
+    stroke-width: 3.8;
+}
+  
+.circle {
+    fill: none;
+    stroke-width: 2.8;
+    stroke-linecap: round;
+    animation: progress 1s ease-out forwards;
+}
+  
+@keyframes progress {
+    0% {
+      stroke-dasharray: 0 100;
+    }
+}
+  
+.circular-chart.orange .circle {
+    stroke: red;
+}
+
+.percentage {
+    fill: #666;
+    font-family: sans-serif;
+    font-size: 0.5em;
+    text-anchor: middle;
+}
+
+/*style for BIO */
 .two-column {
     grid-area: two-column;
+    background-color: blue;
 }
 
 .divider {
     grid-area: divider;
+    background-color: red;
 }
 
 .footer {
     grid-area: footer;
+    background-color: lightcoral;
+}
+
+/* navbar mobile*/
+@media (min-width:48em) {
+
+    .header li {
+        float: left;
+    }
+    .header li a {
+        padding:20px 30px;
+    }
+    .header .menu {
+        clear: none;
+        float: right;
+        max-height: none;
+    }
+    .header .menu-icon {
+        display: none;
+    }
 }

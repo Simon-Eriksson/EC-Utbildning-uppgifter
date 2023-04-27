@@ -32,7 +32,7 @@ body {
 /* style navbar */
 .header {
     grid-area: header;
-    background-color: red;
+    background-color: #000;
     box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
     width: 100%;
     z-index: 3;
@@ -47,7 +47,7 @@ body {
     padding: 0;
     list-style: none;
     overflow: hidden;
-    background-color: red;
+    background-color: #000;
 }
 
 .header ul a {
@@ -58,7 +58,7 @@ body {
 }
 
 .header ul a:hover {
-    background-color: #000;
+    background-color:rgba(211, 211, 211, 0.8);
 }
 
 .header .logo {
@@ -136,7 +136,7 @@ body {
 
 .masthead {
     grid-area: masthead;
-    background-image: url(https://www.enjpg.com/img/2020/iron-man-14.jpg);
+    background-image: url(https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.fondox.net%2Fwallpapers%2Firon-man-comics-1917.jpg&f=1&nofb=1&ipt=8058724a7d2a856aa22e1daa49d77a069b05fddf8f6750d723a6be03020f7c0a&ipo=images);
     width: 100%;
     min-height: 400px;
     background-size: cover;
@@ -287,8 +287,8 @@ body {
 }
 
 .bio-side table {
-    border-collapse: collapse;
-    width: 100%;
+    width: 50%;
+    border: 1px solid;
 }
   
 .bio-side th, td {
@@ -311,8 +311,7 @@ body {
     margin-top: 0px;
     margin-bottom: 10px;
     margin-right: 40px;
-    margin-left: 20px;
-    text-indent: 40px;
+    margin-left: 0px;
     text-align: justify;
     letter-spacing: 3px;
 }
